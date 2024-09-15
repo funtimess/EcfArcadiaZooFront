@@ -1,0 +1,375 @@
+/* Global */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff; /* Couleur par défaut du texte */
+  background-color: #476447;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  cursor: pointer;
+  text-align: center;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #78c1b6;
+  transition: color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+h1:hover, h2:hover, h3:hover, a:hover {
+  color: #007bff; 
+}
+
+p {
+  font-size: 1.1em;
+  color: #ffffff; /* Texte blanc par défaut pour tous les paragraphes */
+}
+
+/* header */
+header {
+  background-image: url(/images/tigre-header.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 80vh;
+  box-shadow: #333;
+  color: white;
+}
+
+header .navbar-brand {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+/* Navbar */
+.nav-link {
+  font-size: 1.2rem;
+  padding: 10px 15px;
+}
+
+.nav-link:hover {
+  background-color: #495057;
+  border-radius: 5px;
+}
+
+.navbar-toggler {
+  border-color: #fff; 
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%288, 8, 8, 1%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
+    margin-bottom: 10px;
+  }
+}
+
+/* main */
+main {
+  padding: 20px 0;
+}
+
+.main-image {
+  height: 20%;
+  width: 80%;
+}
+
+#presentation h1,
+#presentation p {
+  color: white; /* Texte en blanc */
+  background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
+  padding: 10px; /* Ajoute de l'espace autour du texte pour mieux voir le fond */
+  border-radius: 8px; /* Ajoute des coins arrondis au fond */
+  display: inline-block; /* S'assure que le fond ne dépasse pas la taille du texte */
+}
+
+
+#presentation .main-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Habitats main */
+#habitats p {
+  color: white; /* Texte en blanc */
+  background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
+  padding: 10px; /* Ajoute de l'espace autour du texte pour mieux voir le fond */
+  border-radius: 8px; /* Ajoute des coins arrondis au fond */
+  display: inline-block; /* S'assure que le fond ne dépasse pas la taille du texte */
+}
+
+#habitats .habitat {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#habitats .habitat img {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#habitats .habitat img:hover {
+  transform: scale(1.05);
+}
+
+.habitat-img {
+  width: 100%;
+  height: 300px; /* Ajustez cette hauteur selon vos besoins */
+  object-fit: cover;
+}
+
+/* Animal main */
+#animaux {
+  margin-top: 50px; /* Espace au-dessus de la deuxième section */
+  margin-bottom: 50px; /* Espace sous la deuxième section */
+}
+
+.animaux-img {
+  width: 100%;
+  height: 300px; /* Ajustez cette hauteur selon vos besoins */
+  object-fit: cover;
+}
+
+/* Services main */
+#services-list {
+  padding: 2rem 0;
+}
+
+.secondary-cust {
+  background-color: #ceeacf;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombrage léger pour un effet d'élévation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+  margin-bottom: 2rem;
+}
+
+.secondary-cust:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.img-size {
+  width: 100%;
+  max-width: 400px; /* Fixe une largeur maximale pour les images */
+  height: 250px; /* Hauteur fixe pour uniformiser toutes les images */
+  object-fit: cover; /* Remplir l'espace en gardant les proportions de l'image */
+  object-position: center; /* Centrer l'image si elle est recadrée */
+  border-radius: 10px; /* Ajoute un effet arrondi pour un style plus moderne */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#service-resto .img-size {
+  border-color: rgb(176, 111, 26); /* Couleur spécifique pour le service Restauration */
+}
+
+#service-guide .img-size {
+  border-color: yellowgreen; /* Couleur spécifique pour le service Visite guidée */
+}
+
+#service-train .img-size {
+  border-color: green; /* Couleur spécifique pour le service Train */
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  
+}
+
+.service-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 1rem;
+  text-align: center;
+  color: #fff; /* Couleur du texte des paragraphes dans les cartes de service */
+}
+
+.service-content-main p{
+  padding: 1rem;
+  text-align: center;
+  color: #000000; /* Couleur du texte des paragraphes dans les cartes de service */
+}
+
+.service-content h3 {
+  font-size: 1.8rem;
+  
+  margin-bottom: 1rem;
+}
+
+#service-resto h3 {
+  color: rgb(95, 55, 3);
+}
+
+#service-guide h3 {
+  color: rgb(2, 100, 25);
+}
+
+#service-train h3 {
+  color: rgb(1, 17, 4);
+}
+
+
+
+@media (min-width: 992px) {
+  .secondary-cust {
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+
+
+  .img-size {
+    height: 300px; /* Agrandissement des images sur grands écrans .service-content {
+      padding: 1rem;
+      text-align: center;
+      color: #fff; /* Couleur du texte des paragraphes dans les cartes de service */
+    
+  }
+}
+
+/* service-page */
+#reviews {
+  background-color: #9ad598;
+  color: white; 
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+#reviews h2 {
+  margin-bottom: 20px;
+}
+
+.reviews-container .review {
+  background: white;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+.service-img {
+  width: 100%;
+  height: 350px; /* Fixez la hauteur pour que toutes les images aient la même hauteur */
+  object-fit: cover; /* Assure que l'image couvre entièrement la zone sans déformation */
+}
+
+
+
+.card-body-custom {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+}
+
+.card {
+  margin-bottom: 3rem;
+  background-color: #4d794d;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+}
+
+/* Footer */
+footer {
+  color: white;
+}
+
+.primary {
+  color: green;
+}
+
+#carouselExampleCaptions {
+  transform: scale(0.5);
+}
+
+
+
+
+/* Ajuster la taille des images d'habitat et des animaux */
+.habitat-image, .animal-image {
+  width: 100%;
+  height: 300px;
+  display: block; /* Assure que l'image est un bloc pour un centrage */
+  margin: 0 auto; /* Centre l'image horizontalement */
+}
+
+/* Centrer les textes dans les cartes d'animaux */
+.card {
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ajuster la taille des sections pour qu'elles ne soient pas trop larges */
+#habitat-info, #animal-info {
+  max-width: 600px; /* Limite la largeur des sections pour une meilleure lisibilité */
+  margin: 0 auto; /* Centre les sections sur la page */
+}
+
+#animal-list .animal, #habitat-details {
+  display: flex;
+  justify-content: center; /* Centre le contenu horizontalement */
+  flex-wrap: wrap; /* Permet l'affichage des cartes en plusieurs lignes */
+}
+
+.animal {
+  margin-bottom: 20px; /* Ajoute un espace entre les cartes d'animaux */
+}
+
+/* Rapport vétérinaire styling */
+#veterinary-reports .rapport {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+#veterinary-reports .rapport h4 {
+  margin-top: 0;
+}
+
+.card-img-top{
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+}
+
+
+#animal-list{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
