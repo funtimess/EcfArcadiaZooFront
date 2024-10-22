@@ -1,4 +1,3 @@
-add-service-form
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('add-service-form');
     form.addEventListener('submit', function(event) {
@@ -20,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
             alert(data.status);
-            form.reset();  // Réinitialiser le formulaire après soumission
+            form.reset();  // reinitialise le formulaire après soumission
         })
         .catch(error => {
             console.error('Erreur lors de l\'ajout du service:', error);

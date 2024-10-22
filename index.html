@@ -20,11 +20,14 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item active text-white"><a class="nav-link text-white" href="/" >Accueil</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="/services" >Services</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="/habitats" >Habitats</a></li>
-          <li class="nav-item"><a class="nav-link text-white" href="/signin" data-show="disconnected">Connexion</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/services">Services</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/habitats">Habitats</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="/contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/signin" data-show="disconnected">Connexion</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/adminDashboard" data-show="admin">Dashboard Admin</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="/editService" data-show="admin">Ajouter un Service</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/employeeDashboard" data-show="employee">Dashboard Employé</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="/vetDashboard" data-show="vet">Dashboard Vétérinaire</a></li>
           <li class="nav-item"><button class="nav-link text-white" id="signout-btn" data-show="connected">Déconnexion</button></li>
         </ul>
       </div>
@@ -45,7 +48,7 @@
   <footer class="bg-dark text-white text-center footer p-3">
     <div class="row">
         <div class="col-6">
-            <h3 class="primary">Nos horaires</h3>
+            <h3 class="primary bg">Nos horaires</h3>
             <p> Lundi 09h - 19h<br/>
                 Mardi 09h - 19h<br/>
                 Mercredi 09h - 19h<br/>
@@ -76,3 +79,19 @@
 
 
 
+<!-- 
+Les ereurs : 1.1 Symfony\Component\Config\Exception\LoaderLoadException: Container extension "router" is not registered in C:\xampp\htdocs\ArcadiaZooBack\backend\config/packages/framework.yaml (which is being imported from "C:\xampp\htdocs\ArcadiaZooBack\backend\src\Kernel.php").
+1.2 Uncaught PHP Exception Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException: "No route found for "GET http://127.0.0.1:8000/api/registration": Method Not Allowed (Allow: POST)" at RouterListener.php line 153
+1.3 Method "Symfony\Component\Form\AbstractType::buildForm()" might add "void" as a native return type declaration in the future. Do the same in child class "App\Form\AvisType" now to avoid errors or add an explicit @return annotation to suppress this message.
+
+
+2.Dans firewalls il ya bien      json_login:
+                check_path: /api/login
+                success_handler: App\Security\LoginSuccessHandler
+                failure_handler: App\Security\LoginFailureHandler  mais la route pour login dans controller nest pas créer comme tu peux voir dans mes controller mais les fichiers success_handler et failure_handler. Es que je dois créer la route login et es que je besoin les fichiers success_handler et failure_handler?
+                Es que je doit créer une classe avec php bin/console make:auth et créer custom_authenticators: App\Security\ApiTokenAuthenticator ? 
+3.1 verifie tout mes route pourqoui il ya des erreurs
+3.2 verifie mon projet si cest le miuex de travailler avec des API si oui faire moi le code pour serliser et deserialiser les données en JSON. 
+3.3 verifie le code complet de toutes me fichier si tout est correct verifie bien les use aussi, leq route, les methode
+4. comment lier le frontend avec le backend?
+5. Es que il me manque autre chose, es que jai tout les fichiers necessaires pour que les router et les codes functionne correctement?

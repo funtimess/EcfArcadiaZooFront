@@ -1,4 +1,3 @@
-// Liste des habitats avec les informations et les animaux
 const habitats = {
     savane: {
       nom: "Savane",
@@ -112,18 +111,18 @@ const habitats = {
   };
   
 
-  // Fonction pour afficher les détails d'un habitat
+  // affiche les détails d'un habitat
 function showHabitatDetails(habitatKey) {
     const habitat = habitats[habitatKey];
   
-    // Remplir les informations de l'habitat
+    
     document.getElementById('habitat-info').innerHTML = `
       <h2>${habitat.nom}</h2>
       <img src="${habitat.image}" alt="${habitat.nom}" class="img-fluid habitat-image">
       <p>${habitat.description}</p>
     `;
   
-    // Afficher la liste des animaux
+    // affiche la liste des animaux
     const animalList = document.getElementById('animal-list');
     animalList.innerHTML = '';
     habitat.animaux.forEach(animal => {
@@ -140,26 +139,26 @@ function showHabitatDetails(habitatKey) {
       animalList.innerHTML += animalCard;
     });
   
-    // Afficher la section des détails de l'habitat
+    // affiche la section des détails de l'habitat
     document.getElementById('habitat-details').style.display = 'block';
-    document.getElementById('animal-details').style.display = 'none'; // Masquer les détails des animaux
+    document.getElementById('animal-details').style.display = 'none'; // masque les details des animaux
   
-    // Scroller vers le milieu de la section "habitat-details"
+    // scrolle vers le milieu de la section habitat-details
     document.getElementById('habitat-details').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   
-  // Fonction pour afficher les détails d'un animal
+  // fonction pour afficher les détails d'un animal
   function showAnimalDetails(habitatKey, animalName) {
     const animal = habitats[habitatKey].animaux.find(a => a.nom === animalName);
   
-    // Remplir les informations de l'animal
+    // rempli les informations de l'animal
     document.getElementById('animal-info').innerHTML = `
       <h2>${animal.nom}</h2>
       <img src="${animal.image}" alt="${animal.nom}" class="img-fluid animal-image">
       <p><strong>Race :</strong> ${animal.race}</p>
     `;
   
-    // Afficher les rapports vétérinaires
+    // affiche les rapports vétérinaires
     const vetReports = document.getElementById('veterinary-reports');
     vetReports.innerHTML = '';
     if (animal.rapports.length > 0) {
@@ -181,10 +180,10 @@ function showHabitatDetails(habitatKey) {
       vetReports.innerHTML = '<p>Aucun rapport vétérinaire disponible pour cet animal.</p>';
     }
   
-    // Afficher la section des détails de l'animal
+    // affiche la section des détails de l'animal
     document.getElementById('animal-details').style.display = 'block';
   
-    // Scroller vers le milieu de la section "animal-details"
+    // scrolle vers le milieu de la section animal-details
     document.getElementById('animal-details').scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
   

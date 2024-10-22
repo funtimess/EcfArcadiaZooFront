@@ -1,7 +1,6 @@
-/* Global */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #ffffff; /* Couleur par défaut du texte */
+  color: #ffffff; 
   background-color: #476447;
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ h1:hover, h2:hover, h3:hover, a:hover {
 
 p {
   font-size: 1.1em;
-  color: #ffffff; /* Texte blanc par défaut pour tous les paragraphes */
+  color: #ffffff; 
 }
 
 /* header */
@@ -61,15 +60,6 @@ header .navbar-brand {
   border-color: #fff; 
 }
 
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%288, 8, 8, 1%29' stroke-width='2' linecap='round' linejoin='round' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
-}
-
-@media (max-width: 991.98px) {
-  .navbar-nav .nav-item {
-    margin-bottom: 10px;
-  }
-}
 
 /* main */
 main {
@@ -83,11 +73,11 @@ main {
 
 #presentation h1,
 #presentation p {
-  color: white; /* Texte en blanc */
-  background-color: rgba(0, 0, 0, 0.7); /* Fond noir semi-transparent */
-  padding: 10px; /* Ajoute de l'espace autour du texte pour mieux voir le fond */
-  border-radius: 8px; /* Ajoute des coins arrondis au fond */
-  display: inline-block; /* S'assure que le fond ne dépasse pas la taille du texte */
+  color: white; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  padding: 10px; 
+  border-radius: 8px;
+  display: inline-block; 
 }
 
 
@@ -100,11 +90,9 @@ main {
 
 /* Habitats main */
 #habitats p {
-  color: white; /* Texte en blanc */
-  background-color: rgba(0, 0, 0, 0.5); /* Fond noir semi-transparent */
-  padding: 10px; /* Ajoute de l'espace autour du texte pour mieux voir le fond */
-  border-radius: 8px; /* Ajoute des coins arrondis au fond */
-  display: inline-block; /* S'assure que le fond ne dépasse pas la taille du texte */
+  color: white; 
+  padding: 10px; 
+  border-radius: 8px; 
 }
 
 #habitats .habitat {
@@ -124,19 +112,19 @@ main {
 
 .habitat-img {
   width: 100%;
-  height: 300px; /* Ajustez cette hauteur selon vos besoins */
+  height: 300px; 
   object-fit: cover;
 }
 
 /* Animal main */
 #animaux {
-  margin-top: 50px; /* Espace au-dessus de la deuxième section */
-  margin-bottom: 50px; /* Espace sous la deuxième section */
+  margin-top: 50px; 
+  margin-bottom: 50px; 
 }
 
 .animaux-img {
   width: 100%;
-  height: 300px; /* Ajustez cette hauteur selon vos besoins */
+  height: 300px; 
   object-fit: cover;
 }
 
@@ -149,8 +137,8 @@ main {
   background-color: #ceeacf;
   border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombrage léger pour un effet d'élévation */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation au survol */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 2rem;
 }
 
@@ -161,24 +149,24 @@ main {
 
 .img-size {
   width: 100%;
-  max-width: 400px; /* Fixe une largeur maximale pour les images */
-  height: 250px; /* Hauteur fixe pour uniformiser toutes les images */
-  object-fit: cover; /* Remplir l'espace en gardant les proportions de l'image */
-  object-position: center; /* Centrer l'image si elle est recadrée */
-  border-radius: 10px; /* Ajoute un effet arrondi pour un style plus moderne */
+  max-width: 400px; 
+  height: 250px; 
+  object-fit: cover; 
+  object-position: center; 
+  border-radius: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #service-resto .img-size {
-  border-color: rgb(176, 111, 26); /* Couleur spécifique pour le service Restauration */
+  border-color: rgb(176, 111, 26); 
 }
 
 #service-guide .img-size {
-  border-color: yellowgreen; /* Couleur spécifique pour le service Visite guidée */
+  border-color: yellowgreen; 
 }
 
 #service-train .img-size {
-  border-color: green; /* Couleur spécifique pour le service Train */
+  border-color: green; 
 }
 
 .service-content p {
@@ -192,13 +180,13 @@ main {
   line-height: 1.6;
   padding: 1rem;
   text-align: center;
-  color: #fff; /* Couleur du texte des paragraphes dans les cartes de service */
+  color: #fff; 
 }
 
 .service-content-main p{
   padding: 1rem;
   text-align: center;
-  color: #000000; /* Couleur du texte des paragraphes dans les cartes de service */
+  color: #000000; 
 }
 
 .service-content h3 {
@@ -230,11 +218,10 @@ main {
 
 
   .img-size {
-    height: 300px; /* Agrandissement des images sur grands écrans .service-content {
+    height: 300px; 
       padding: 1rem;
       text-align: center;
-      color: #fff; /* Couleur du texte des paragraphes dans les cartes de service */
-    
+      color: #fff; 
   }
 }
 
@@ -262,7 +249,7 @@ main {
 .service-card {
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease;
   margin-bottom: 2rem;
   display: flex;
@@ -275,8 +262,8 @@ main {
 
 .service-img {
   width: 100%;
-  height: 350px; /* Fixez la hauteur pour que toutes les images aient la même hauteur */
-  object-fit: cover; /* Assure que l'image couvre entièrement la zone sans déformation */
+  height: 350px; 
+  object-fit: cover; 
 }
 
 
@@ -301,6 +288,7 @@ footer {
   color: white;
 }
 
+
 .primary {
   color: green;
 }
@@ -311,16 +299,14 @@ footer {
 
 
 
-
-/* Ajuster la taille des images d'habitat et des animaux */
 .habitat-image, .animal-image {
   width: 100%;
   height: 300px;
-  display: block; /* Assure que l'image est un bloc pour un centrage */
-  margin: 0 auto; /* Centre l'image horizontalement */
+  display: block; 
+  margin: 0 auto; 
 }
 
-/* Centrer les textes dans les cartes d'animaux */
+/* les cartes d'animaux */
 .card {
   text-align: center;
 }
@@ -332,23 +318,22 @@ footer {
   align-items: center;
 }
 
-/* Ajuster la taille des sections pour qu'elles ne soient pas trop larges */
 #habitat-info, #animal-info {
-  max-width: 600px; /* Limite la largeur des sections pour une meilleure lisibilité */
-  margin: 0 auto; /* Centre les sections sur la page */
+  max-width: 600px; 
+  margin: 0 auto; 
 }
 
 #animal-list .animal, #habitat-details {
   display: flex;
-  justify-content: center; /* Centre le contenu horizontalement */
-  flex-wrap: wrap; /* Permet l'affichage des cartes en plusieurs lignes */
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
 
 .animal {
-  margin-bottom: 20px; /* Ajoute un espace entre les cartes d'animaux */
+  margin-bottom: 20px;
 }
 
-/* Rapport vétérinaire styling */
+/* Rapport vétérinaire */
 #veterinary-reports .rapport {
   border: 1px solid #ddd;
   padding: 10px;

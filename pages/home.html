@@ -1,4 +1,4 @@
-<!-- Vue des habitats -->
+<!-- habitats --> 
 <section id="habitats" class="container my-5">
   <h2><a href="/habitats">Découvrez nos Habitats</a></h2>
   <div class="row">
@@ -24,12 +24,12 @@
       <p>Découvrez la jungle et ses singes, serpents colorés et oiseaux exotiques dans un cadre verdoyant.</p>
     </div>
   </div>
-  <div class="text-center mb-4"> <!-- Utilise les classes Bootstrap pour le centrage et la marge -->
-    <a href="/habitats" class="btn btn-primary btn-lg">En savoir plus sur nos habitats</a> <!-- Utilisation des classes Bootstrap pour le bouton -->
+  <div class="text-center mb-4">
+    <a href="/habitats" class="btn btn-primary btn-lg">En savoir plus sur nos habitats</a>
   </div>
 </section>
 
-<!-- Les animaux --> 
+<!-- les animaux --> 
 <section id="animaux" class="container my-5"> 
    <h2><a href="/services">Nos Animaux</a></h2>
   <div class="row">
@@ -49,22 +49,22 @@
       <p>Le lama est un animal robuste et docile, originaire des régions montagneuses d'Amérique du Sud. Reconnaissable à son long cou et à sa laine épaisse, il est apprécié pour sa capacité à s’adapter aux environnements difficiles. Le lama est un excellent randonneur, souvent utilisé comme animal de bât, capable de transporter de lourdes charges sur de longues distances. Sociable et curieux, il vit généralement en troupeau, où il tisse des liens forts avec ses congénères. Au zoo, vous pourrez approcher ces animaux fascinants, découvrir leur mode de vie, et en apprendre davantage sur leur importance pour les cultures andines.</p>
     </div>
   </div>
-  <div class="text-center mb-4"> <!-- Utilise les classes Bootstrap pour le centrage et la marge -->
-    <a href="/habitats" class="btn btn-primary btn-lg">En savoir plus sur nos animaux</a> <!-- Utilisation des classes Bootstrap pour le bouton -->
+  <div class="text-center mb-4"> 
+    <a href="/habitats" class="btn btn-primary btn-lg">En savoir plus sur nos animaux</a> 
   </div>
 </section>
     
   
 
 
-<!-- Services -->
+<!-- services -->
 <div id="services-list">
   <div class="text-center mb-5">
       <h2><a href="/services">Découvrez nos Services</a></h2>
   </div>
   <section id="services" class="container d-flex flex-column justify-content-center align-items-center w-100">
       
-      <!-- Service Restauration -->
+      <!-- service restauration -->
       <div id="service-resto" class="secondary-cust d-flex justify-content-between align-items-center flex-column flex-lg-row w-100 my-2">
           <img src="images/restaurant.jpg" alt="Restauration" class="img-size">
           <div class="service-content-main">
@@ -73,7 +73,7 @@
           </div>
       </div>
 
-      <!-- Service Visite guidée -->
+      <!-- service visite guidée -->
       <div id="service-guide" class="secondary-cust d-flex justify-content-between align-items-center flex-column flex-lg-row w-100 my-2">
           <img src="images/guide.jpg" alt="Visite guidée" class="img-size">
           <div class="service-content-main">
@@ -82,7 +82,7 @@
           </div>
       </div>
 
-      <!-- Service Train -->
+      <!-- service train -->
       <div id="service-train" class="secondary-cust d-flex justify-content-between align-items-center flex-column flex-lg-row w-100 my-2">
           <img src="images/train.jpg" alt="Train" class="img-size">
           <div class="service-content-main">
@@ -98,46 +98,46 @@
 
     
           
-    <!-- Avis des visiteurs --> 
+    <!-- avis des visiteurs --> 
    
- <!-- Formulaire de soumission d'avis -->
+<!-- formulaire de soumission d'avis -->
 <section aria-label="Formulaire publication d'un avis" id="reviews" class="container my-5">
   <div class="d-flex justify-content-center reviews-container">
     <div>
-      <form name="avis" method="post" action="/avis/create">
+      <form id="avis-form" onsubmit="submitAvis(); return false;"> 
         <h2 class="text-center mb-4">Laissez un avis</h2>
 
-        <!-- Champ pour le pseudo -->
+        <!-- le pseudo -->
         <div class="mb-3">
           <label class="form-label required" for="avis_pseudo">Entrez un nom ou un pseudo :</label>
           <input type="text" id="avis_pseudo" name="avis[pseudo]" required="required" maxlength="50" class="form-control" placeholder="Pseudo" aria-required="true" />
         </div>
 
-        <!-- Champ pour la note -->
+        <!--pour la note -->
         <div class="mb-3">
           <label class="form-label required" for="avis_note">Notez le zoo :</label>
           <input type="number" id="avis_note" name="avis[note]" min="1" max="5" class="form-control" placeholder="Note (1 à 5)" required="required" aria-required="true" />
         </div>
 
-        <!-- Champ pour le commentaire -->
+        <!-- le commentaire -->
         <div class="mb-3">
-          <label for="avis_commentaire" class="form-label required">Votre commentaire :</label>
+          <label for="avis_commentaire" class="form-label required">Votre commentaire :</label> 
           <textarea id="avis_commentaire" name="avis[commentaire]" required="required" placeholder="Votre avis" class="form-control" rows="5" maxlength="255"></textarea>
         </div>
 
-        <!-- Validation RGPD -->
+        <!--  RGPD -->
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="rgpd" required aria-required="true">
           <label class="form-check-label" for="rgpd">En cochant cette case, j'accepte que mon avis soit visible sur le site une fois validé.</label>
         </div>
 
-        <!-- Bouton de soumission -->
         <div class="mb-3">
           <button type="submit" class="btn btn-primary w-100">Envoyer</button>
         </div>
       </form>
     </div>
   </div>
-</section>
+</section> 
+
 
   
