@@ -1,25 +1,19 @@
-// adminDashboard.js
-async function loadAdminDashboard() {
-    const response = await fetch('http://127.0.0.1:8000/api/vet/dashboard', {
+async function loadVetDashboard() {
+    const response = await fetch('/api/vet/dashboard', {
         headers: {
-            'Authorization': `Bearer ${getToken()}` // Utilise un token pour sécuriser l'accès
+            'Authorization': `Bearer ${getToken()}`
         }
     });
 
     if (response.ok) {
-        const data = await response.json();
-        // Affiche les données sur le tableau de bord
-        displayAdminDashboardData(data);
+        const habitats = await response.json();
+        // Affichez les données du tableau de bord vétérinaire
+        console.log(habitats);
     } else {
         alert('Erreur lors du chargement du tableau de bord.');
     }
 }
 
-function displayAdminDashboardData(data) {
-    // Fonction pour afficher les données dans le tableau de bord Admin
-    const dashboardContainer = document.getElementById('vet-dashboard');
-    // Affiche les données pertinentes comme les consultations d'animaux populaires, etc.
-    dashboardContainer.innerHTML = `Nombre de consultations: ${data.consultations}`;
-}
+loadVetDashboard();
 
-loadAdminDashboard();
+

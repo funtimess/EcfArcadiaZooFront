@@ -1,25 +1,64 @@
-// adminDashboard.js
-async function loadAdminDashboard() {
-    const response = await fetch('http://127.0.0.1:8000/api/employee/dashboard', {
+// Chargement des avis en attente de validation
+async function loadPendingAvis() {
+    const response = await fetch('http://127.0.0.1:8000/api/employee/avis/pending', {
         headers: {
-            'Authorization': `Bearer ${getToken()}` // Utilise un token pour sécuriser l'accès
+            'Authorization': `Bearer ${getToken()}`,
+        }
+    });
+
+    const avisList = await response.json();
+    const avisContainer = document.getElementById('pending-avis-list');
+    avisContainer.innerHTML = '';
+
+    avisList.forEach(avis => {
+        const avisItem = document.createElement('div');
+        avisItem.classList.add('avis-item');
+        avisItem.innerHTML = `
+            <p><strong>${avis.pseudo}</strong>: ${avis.commentaire}</p>
+            <button onclick="validateAvis(${avis.id})">Valider</button>
+            <button onclick="invalidateAvis(${avis.id})">Invalider</button>
+        `;
+        avisContainer.appendChild(avisItem);
+    });
+}
+
+// Validation d’un avis
+async function validateAvis(avisId) {
+    const response = await fetch(`http://127.0.0.1:8000/api/employee/avis/${avisId}/validate`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${getToken()}`,
         }
     });
 
     if (response.ok) {
-        const data = await response.json();
-        // Affiche les données sur le tableau de bord
-        displayAdminDashboardData(data);
+        alert('Avis validé');
+        loadPendingAvis();
     } else {
-        alert('Erreur lors du chargement du tableau de bord.');
+        alert('Erreur lors de la validation de l\'avis');
     }
 }
 
-function displayAdminDashboardData(data) {
-    // Fonction pour afficher les données dans le tableau de bord Admin
-    const dashboardContainer = document.getElementById('employee-dashboard');
-    // Affiche les données pertinentes comme les consultations d'animaux populaires, etc.
-    dashboardContainer.innerHTML = `Nombre de consultations: ${data.consultations}`;
+// Invalidation d’un avis
+async function invalidateAvis(avisId) {
+    const response = await fetch(`http://127.0.0.1:8000/api/employee/avis/${avisId}/invalidate`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${getToken()}`,
+        }
+    });
+
+    if (response.ok) {
+        alert('Avis invalidé');
+        loadPendingAvis();
+    } else {
+        alert('Erreur lors de l\'invalidation de l\'avis');
+    }
 }
 
-loadAdminDashboard();
+document.addEventListener('DOMContentLoaded', loadPendingAvis);
+
+
+
+
+

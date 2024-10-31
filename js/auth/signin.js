@@ -1,4 +1,4 @@
-// signin.js
+
 document.getElementById('signin-form').addEventListener('submit', async function(event) {
     event.preventDefault();
 

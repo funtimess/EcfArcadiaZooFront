@@ -1,7 +1,23 @@
-    <div class="container">
-        <h2 class="my-4">Tableau de bord de l'Administrateur</h2>
-        <div id="admin-stats" class="alert alert-info">
-            Chargement des statistiques...
+<div class="container">
+    <h2 class="my-4">Tableau de bord de l'Administrateur</h2>
+    <h3>Créer un nouvel employé/vétérinaire</h3>
+    <form id="employee-register-form">
+        <div class="mb-3">
+            <label for="username" class="form-label">Courriel (Username)</label>
+            <input type="email" class="form-control" id="username" name="username" required>
         </div>
-    </div>
-
+        <div class="mb-3">
+            <label for="password" class="form-label">Mot de passe</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="mb-3">
+            <label for="role" class="form-label">Rôle</label>
+            <select class="form-control" id="role" name="role" required>
+                <option value="ROLE_EMPLOYEE">Employé</option>
+                <option value="ROLE_VET">Vétérinaire</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Créer le compte</button>
+    </form>
+    <div id="admin-stats" class="alert alert-info mt-5">statistiques...</div>
+</div>

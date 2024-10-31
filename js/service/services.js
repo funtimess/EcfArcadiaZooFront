@@ -9,7 +9,7 @@ async function loadServices() {
     const servicesList = document.getElementById("dynamic-service-list");
     servicesList.innerHTML = '';
 
-    services.forEach(service => {
+    services.forEach(service => 
         const serviceElement = document.createElement("div");
         serviceElement.classList.add("service-card", "d-flex", "justify-content-between", "align-items-center", "flex-column", "flex-lg-row", "p-0", "w-100", "my-2", "rounded");
 
@@ -25,7 +25,7 @@ async function loadServices() {
         `;
 
         const userRole = getRole();
-        if (userRole === 'ROLE_ADMIN') {
+        if (userRole === 'ROLE_ADMIN' || 'ROLE_EMPLOYEE') {
             const adminButtons = document.createElement("div");
             adminButtons.innerHTML = `
                 <button class="btn btn-warning edit-service-btn me-2" data-id="${service.id}">Modifier</button>
@@ -53,7 +53,7 @@ async function deleteService(serviceId) {
         headers: {
             'Authorization': `Bearer ${getToken()}`
         }
-    });
+    );
 
     if (response.ok) {
         alert("Service supprimé avec succès !");

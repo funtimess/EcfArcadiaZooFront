@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('add-service-form');
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', async function(event) {
         event.preventDefault();
 
         const name = document.getElementById('name').value;
         const description = document.getElementById('description').value;
 
-        fetch('http://localhost:8000/api/services', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                name: name,
-                description: description,
-            }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            alert(data.status);
-            form.reset();  // reinitialise le formulaire après soumission
-        })
-        .catch(error => {
+        try {
+            const response = await fetch('http://127.0.0.1:8000/api/services', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, description }),
+            });
+            if (response.ok) {
+                alert("Service ajouté avec succès !");
+                form.reset();
+            } else {
+                alert("Erreur lors de l'ajout du service.");
+            }
+        } catch (error) {
             console.error('Erreur lors de l\'ajout du service:', error);
-        });
+        }
     });
 });
+

@@ -94,15 +94,15 @@ function showAndHideElementsForRoles() {
 
 // Avis
 async function submitAvis() {
-    const pseudo = document.getElementById('pseudo').value;
-    const content = document.getElementById('commentaire').value;
+    const pseudo = document.getElementById('avis_pseudo').value;
+    const commentaire = document.getElementById('avis_commentaire').value;
 
-    const response = await fetch('http://127.0.0.1:8000/avis/new', {
+    const response = await fetch('http://127.0.0.1:8000/api/avis/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ pseudo, content }),
+        body: JSON.stringify({ pseudo, commentaire }),
     });
 
     if (response.ok) {
@@ -111,3 +111,5 @@ async function submitAvis() {
         alert('Erreur lors de la soumission de l\'avis');
     }
 }
+
+
